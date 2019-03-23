@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Miguel Depiante</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <script src="main.js"></script>
+
+  </head>
+
+  <body onload="definirDispositivo()">
+
+
+	<!-- Navegación ================================================= -->
+	<nav class="navegacion" id="nav">
+
+		<ul class="navegacion-lista" id="nav-lista">
+			<div>
+				<li class="navegacion-items">
+					<a href="#"><span id="logo" class="logo"></span></a>
+				</li>
+			</div>
+			<div>
+				<li class="navegacion-items">
+					<a href="#contenido">Informaci&oacute;n</a>
+				</li>
+				<li class="navegacion-items">
+					<a href="#contacto">Contacto</a>
+				</li>
+			</div>
+		</ul>
+		
+	</nav>
+
+	<div class="contenedor">
+
+		<section class="portada border-redondeados sombra-luminosa fondo">
+			<div class="img">
+				<img class="img-perfil" id="img-perfil" src="img/perfil.webp" alt="Foto">
+			</div>
+			<div class="perfil">
+				<h1>Miguel Depiante</h1>
+				<div>
+					<h3>Desarrollador de Software</h3>
+					<p>Morteros, Córdoba</p>
+					<p>mdepdma@gmail.com</p>
+				</div>
+				
+			</div>
+			
+		</section>
+
+		<section class="contenido border-redondeados sombra-luminosa fondo" id="contenido">
+
+			<div class="informacion-personal">
+				<h3>Texto Relacinado al area</h3>
+				<br>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias alias nisi fuga, nobis facere soluta dicta doloremque fugit nihil modi, officia sapiente blanditiis. Natus minima, laborum eveniet, necessitatibus aliquid esse.
+				</p>
+			</div>
+			<div class="formacion-academica">
+				<h3>Texto Relacinado al area</h3>
+				<br>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem dicta natus adipisci est totam eveniet ut, vero, corporis nostrum recusandae deserunt distinctio consequatur officia eos? Dolorem deleniti accusantium, distinctio non.
+				</p>
+			</div>
+			<div class="experiencia-laboral">
+				<h3>Texto Relacinado al area</h3>
+				<br>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis rerum possimus officia sint accusamus nihil. Incidunt debitis eos facilis natus soluta ex optio, deleniti nostrum nam sed. Laudantium error, reprehenderit.
+				</p>
+			</div>
+			
+		</section>
+
+		<section class="contacto border-redondeados sombra-luminosa fondo" id="contacto">
+			<div class="formulario border-redondeados">
+				<form action="">
+					<input type="text" required placeholder="Nombre">
+					<input type="text" required placeholder="Apellido">
+					<input type="email" required placeholder="Email">
+					<textarea name="" id="" cols="30" rows="10" placeholder="Escriba su mensaje"></textarea>
+					<!-- <input type="button" value="Enviar">  -->
+					<button type="submit" class="boton"><span class="enviar">Enviar</span></button>
+
+				</form>
+			</div>
+			<div class="mapa">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d13720.065991226307!2d-62.01066999999999!3d-30.717936600000005!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1553356951936" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+				
+			</div>
+			
+		</section>
+	</div>
+
+	<footer>
+		<div class="redes-sociales">
+			
+		</div>
+		<div class="informacion-adicional">
+			
+		</div>
+	</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- ScroolReveal -->
+	<script src="https://unpkg.com/scrollreveal"></script>
+  	<!-- script Bootstrap -->
+  	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	
+	<!-- <script type="text/javascript">
+		ScrollReveal().reveal('.contenedor', {
+			distance: '200px',
+			origin: 'top',
+			delay: 1000,
+			duration: 1000
+		});
+		ScrollReveal().reveal('.descripcion', {
+			distance: '200px',
+			origin: 'top',
+			delay: 1500,
+			duration: 1000
+		});
+		ScrollReveal().reveal('.titulo', {
+			distance: '200px',
+			origin: 'top',
+			delay: 1300,
+			duration: 1000
+		});
+
+	</script> -->
+  </body>
+</html>

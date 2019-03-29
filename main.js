@@ -1,5 +1,5 @@
 
-
+// Detectar desde que dispositivo se conectan
 function definirDispositivo() {
 	var dispositivo = '';
 	if (navigator.userAgent.indexOf('Android') != -1 || navigator.userAgent.indexOf('iOS iPad iPod iPhone') != -1) {
@@ -13,7 +13,7 @@ function definirDispositivo() {
 	}
 }
 
-
+// Animación de la barra
 window.addEventListener('scroll', () => {
 	var scrollY = window.scrollY;
 	var navbar = document.getElementById('nav');
@@ -36,3 +36,27 @@ window.addEventListener('scroll', () => {
 	}
 });
 
+// Scrolling
+function irA (direccion) {
+		switch (direccion) {
+			case 'informacion':
+					window.scrollTo(0,509);
+				break;
+			case 'contacto':
+					window.scrollTo(0,1367);
+				break;
+			default:
+				break;
+
+		}
+
+	// if (direccion === 'informacion') {
+	//
+	// 		window.scrollTo(0,509);
+	// 		return;
+	// }
+	// if (direccion === 'contacto') {
+	// 	window.scrollTo(0,1367);
+	// 	return;
+	// }
+}

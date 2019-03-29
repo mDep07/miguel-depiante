@@ -6,8 +6,13 @@
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Cuprum|Quicksand" rel="stylesheet">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
 
     <script src="main.js"></script>
 
@@ -27,14 +32,14 @@
 			</div>
 			<div>
 				<li class="navegacion-items">
-					<a href="#contenido">Informaci&oacute;n</a>
+					<a href="#" onclick="irA('informacion'); return false;">Informaci&oacute;n</a>
 				</li>
 				<li class="navegacion-items">
-					<a href="#contacto">Contacto</a>
+					<a href="#" onclick="irA('contacto'); return false;">Contacto</a>
 				</li>
 			</div>
 		</ul>
-		
+
 	</nav>
 
 	<div class="contenedor">
@@ -50,38 +55,55 @@
 					<p>Morteros, Córdoba</p>
 					<p>mdepdma@gmail.com</p>
 				</div>
-				
-			</div>
-			
-		</section>
 
-		<section class="contenido border-redondeados sombra-luminosa fondo" id="contenido">
+			</div>
+
+		</section>
+<span id="contenido"></span>
+		<section class="contenido border-redondeados sombra-luminosa fondo">
 
 			<div class="informacion-personal">
-				<h3>Texto Relacinado al area</h3>
+				<h3>Informaci&oacute;n Personal</h3>
 				<br>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias alias nisi fuga, nobis facere soluta dicta doloremque fugit nihil modi, officia sapiente blanditiis. Natus minima, laborum eveniet, necessitatibus aliquid esse.
 				</p>
 			</div>
 			<div class="formacion-academica">
-				<h3>Texto Relacinado al area</h3>
+				<h3>Formaci&oacute;n Academica</h3>
 				<br>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem dicta natus adipisci est totam eveniet ut, vero, corporis nostrum recusandae deserunt distinctio consequatur officia eos? Dolorem deleniti accusantium, distinctio non.
 				</p>
 			</div>
 			<div class="experiencia-laboral">
-				<h3>Texto Relacinado al area</h3>
+				<h3>Experiencia Laboral</h3>
 				<br>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis rerum possimus officia sint accusamus nihil. Incidunt debitis eos facilis natus soluta ex optio, deleniti nostrum nam sed. Laudantium error, reprehenderit.
-				</p>
+					Portafolio
+        </p>
+        <section class="section-explab">
+          <div>
+            <img src="./img/imagenes/doom.jpg" alt="">
+          </div>
+          <div>
+            <img src="./img/imagenes/palabras.jpg" alt="">
+          </div>
+          <div>
+            <img src="./img/imagenes/rio.jpg" alt="">
+          </div>
+          <div>
+            <img src="./img/imagenes/thor.jpg" alt="">
+          </div>
+          <div>
+            <img src="./img/imagenes/angular.jpg" alt="">
+          </div>
+        </section>
 			</div>
-			
-		</section>
 
-		<section class="contacto border-redondeados sombra-luminosa fondo" id="contacto">
+		</section>
+  <span id="contacto"></span>
+		<section class="contacto border-redondeados sombra-luminosa fondo">
 			<div class="formulario border-redondeados">
 				<form action="">
 					<input type="text" required placeholder="Nombre">
@@ -92,21 +114,39 @@
 					<button type="submit" class="boton"><span class="enviar">Enviar</span></button>
 
 				</form>
+        <span class="contacteme">
+        CONT&Aacute;CTAME
+      </span>
 			</div>
 			<div class="mapa">
 				<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d13720.065991226307!2d-62.01066999999999!3d-30.717936600000005!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1553356951936" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
-				
+
 			</div>
-			
+
 		</section>
+
 	</div>
 
-	<footer>
+	<footer class="footer">
 		<div class="redes-sociales">
-			
+        <a href="">
+          <i class="icono facebook"></i>
+        </a>
+        <a href="">
+          <i class="icono instagram"></i>
+        </a>
+        <a href="">
+          <i class="icono twitter"></i>
+        </a>
+        <a href="">
+          <i class="icono github"></i>
+        </a>
 		</div>
 		<div class="informacion-adicional">
-			
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua.
+        </p>
 		</div>
 	</footer>
 
@@ -129,7 +169,7 @@
   	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-	
+
 	<!-- <script type="text/javascript">
 		ScrollReveal().reveal('.contenedor', {
 			distance: '200px',

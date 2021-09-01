@@ -5,6 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
 const setFunctionOpenPanel = () => {
   Array.from(document.querySelectorAll('.open__panel'), btn => {
     btn.addEventListener('click', () => {
+      const activeBtn = document.querySelector('.open__panel.active');
+      if (activeBtn && activeBtn !== btn) {
+        activeBtn.classList.remove('active');
+        const activePanel = activeBtn.nextElementSibling;
+        activePanel.style.maxHeight = null;
+      }
+
       btn.classList.toggle('active');
       const panel = btn.nextElementSibling;
 

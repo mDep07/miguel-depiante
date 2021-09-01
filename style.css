@@ -28,6 +28,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  overflow-y: hidden;
 }
 
 .box {
@@ -40,6 +42,9 @@ body {
   box-shadow: 0 0 20px #0c0c0c;
   width: auto;
   max-width: 80%;
+  height: auto;
+  max-height: 85%;
+  overflow-y: auto;
   font-size: 14px;
 }
 
@@ -56,8 +61,10 @@ body {
   color: #fff;
   text-shadow: 1px 1px 2px #0c0c0c;
 }
-
-.box a.link {
+.box .links__container {
+  margin-bottom: 0.5rem;
+}
+.links__container a.link {
   font-family: 'Darker Grotesque', sans-serif;
   color: #fff;
   text-decoration: none;
@@ -70,23 +77,22 @@ body {
   transition: all 0.25s ease-in-out;
 }
 
-.box a.link i {
+.links__container a.link i {
   font-size: 2em;
   margin-right: 0.25rem;
 }
 
-.box a.link:hover {
-  /* text-decoration: underline; */
+.links__container a.link:hover {
   background-color: rgb(var(--color) / 40%);
   text-shadow: 0 1px 2px #0c0c0c;
 }
 
-.box .technologies__container {
+.links__container .technologies__container {
   font-family: 'Darker Grotesque', sans-serif;
-  padding: 0.5rem;
+  padding: 0 0.5rem;
 }
 
-.box .technologies__container::before {
+.links__container .technologies__container::before {
   content: '';
   display: block;
   width: 100%;
@@ -101,6 +107,7 @@ body {
   display: flex;
   justify-content: start;
   align-items: center;
+  margin-top: 0.5rem;
   width: 100%;
   border: none;
   border-radius: 0.5rem 0.5rem 0 0;
@@ -163,6 +170,7 @@ body {
   font-size: 1.25rem;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   padding: 1rem 0;
 }
 
@@ -172,6 +180,14 @@ body {
 
 .panel ol li .bx {
   font-size: 2rem;
+}
+.panel ol li .subtitle {
+  display: block;
+  width: 100%;
+  padding-left: 2.5rem;
+  font-size: 1rem;
+  color: #cfcfcf;
+  font-weight: 300;
 }
 
 @media screen and (max-width: 500px) {
@@ -186,7 +202,7 @@ body {
     justify-content: space-evenly;
   }
 
-  .box a.link {
+  .links__container a.link {
     font-size: 1.5em;
     background-color: rgb(var(--color) / 40%);
     color: #fff;
@@ -198,12 +214,12 @@ body {
     margin-bottom: 0.5rem;
   }
 
-  .box a.link:active,
-  .box a.link:focus {
+  .links__container a.link:active,
+  .links__container a.link:focus {
     box-shadow: 0 0 0 3px rgb(255 255 255 / 55%);
   }
 
-  .box a.link:last-child {
+  .links__container a.link:last-child {
     margin-bottom: 0;
   }
 }

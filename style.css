@@ -13,12 +13,12 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: orange;
+  background-color: #020424;
 }
 
 .container {
   background-color: rgb(0 0 0 / 50%);
-  background-image: url('https://cdn.jsdelivr.net/gh/mDep07/miguel-depiante@master/img/img1.jpg');
+  background-image: url('https://cdn.jsdelivr.net/gh/mDep07/miguel-depiante@master/img/img4.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
@@ -50,19 +50,19 @@ body {
   text-shadow: 1px 1px 2px #0c0c0c;
 }
 .box h3 {
+  font-family: 'Darker Grotesque', sans-serif;
   margin: 2rem 0;
   font-size: 2.5em;
   color: #fff;
   text-shadow: 1px 1px 2px #0c0c0c;
-  font-family: 'Darker Grotesque', sans-serif;
 }
 
 .box a.link {
+  font-family: 'Darker Grotesque', sans-serif;
   color: #fff;
   text-decoration: none;
   padding: 5px 15px;
   border-radius: 0.5rem;
-  font-family: 'Darker Grotesque', sans-serif;
   font-weight: 600;
   display: inline-flex;
   justify-content: center;
@@ -72,6 +72,7 @@ body {
 
 .box a.link i {
   font-size: 2em;
+  margin-right: 0.25rem;
 }
 
 .box a.link:hover {
@@ -80,18 +81,128 @@ body {
   text-shadow: 0 1px 2px #0c0c0c;
 }
 
+.box .technologies__container {
+  font-family: 'Darker Grotesque', sans-serif;
+  padding: 0.5rem;
+}
+
+.box .technologies__container::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 100px;
+  background-color: rgb(var(--color));
+  margin-bottom: 1rem;
+}
+
+.technologies__container .open__panel {
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  border: none;
+  border-radius: 0.5rem 0.5rem 0 0;
+  background-color: rgb(var(--color) / 20%);
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 400;
+  padding: 0.5rem 10rem;
+  padding-left: 2.25rem;
+  cursor: pointer;
+}
+
+/* .technologies__container .open__panel.active {
+  border-radius: 0.5rem 0.5rem 0 0;
+} */
+
+.technologies__container .open__panel::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  left: 10px;
+  background-color: currentColor;
+}
+.technologies__container .open__panel::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 16px;
+  left: 17px;
+  background-color: currentColor;
+  transition: transform 0.15s ease-in-out;
+}
+.technologies__container .open__panel.active::after {
+  transform: rotate(90deg);
+}
+
+.technologies__container .panel {
+  background-color: rgb(var(--color) / 20%);
+  font-weight: 500;
+  font-size: 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease-in-out;
+}
+
+.technologies__container .open__panel.active ~ .panel {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.technologies__container .panel ol {
+  list-style-type: none;
+  padding: 0 1rem;
+  margin: 0;
+  color: #fff;
+}
+
+.panel ol li {
+  text-align: start;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.panel ol li:not(:last-child) {
+  border-bottom: 1px solid rgb(var(--color));
+}
+
+.panel ol li .bx {
+  font-size: 2rem;
+}
+
 @media screen and (max-width: 500px) {
   .box {
     font-size: 10px;
     padding: 1rem;
   }
+
+  .box .links__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
   .box a.link {
     font-size: 1.5em;
     background-color: rgb(var(--color) / 40%);
     color: #fff;
     display: flex;
-    margin: 0.5rem 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-width: 70px;
+    max-height: 50px;
+    margin-bottom: 0.5rem;
   }
+
+  .box a.link:active,
+  .box a.link:focus {
+    box-shadow: 0 0 0 3px rgb(255 255 255 / 55%);
+  }
+
   .box a.link:last-child {
     margin-bottom: 0;
   }

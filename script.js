@@ -1,5 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
   setFunctionOpenPanel();
+  const inputs = [
+    ...document.querySelectorAll(
+      '.form .input__form > input, .form .input__form > textarea'
+    )
+  ];
+  inputs.forEach(i => {
+    i.addEventListener('change', setHasContentInput);
+  });
 });
 
 const setFunctionOpenPanel = () => {
@@ -20,4 +28,15 @@ const setFunctionOpenPanel = () => {
         : panel.scrollHeight + 'px';
     });
   });
+};
+
+const setHasContentInput = input => {
+  console.log(input);
+  const elemento = input.target;
+  const hasContent = elemento.value.length > 0;
+  if (hasContent) {
+    elemento.classList.add('has_content');
+  } else {
+    elemento.classList.remove('has_content');
+  }
 };

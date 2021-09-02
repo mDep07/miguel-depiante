@@ -6,6 +6,8 @@
 
 :root {
   --color: 0 118 173;
+  /* --color: 227 124 34; */
+  /* --color: 176 25 171; */
 }
 
 ::selection {
@@ -50,6 +52,7 @@ body {
   max-height: 90%;
   overflow-y: auto;
   font-size: 14px;
+  transition: all 0.5s ease-in-out;
 }
 
 .box::-webkit-scrollbar {
@@ -330,6 +333,38 @@ form .input__form > textarea::-webkit-scrollbar {
 
 .form .submit__form:hover span {
   margin-right: 0.5rem;
+}
+
+.box .colors__container {
+  margin: 1rem 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.colors__container .color {
+  display: inline-block;
+  padding: 0.5rem;
+}
+
+.colors__container .color label {
+  position: relative;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-color: rgb(var(--color));
+  border-radius: 100px;
+  box-shadow: 0 0 0 2px rgb(var(--color) / 60%);
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+.colors__container .color input {
+  display: none;
+}
+.colors__container .color input:checked ~ label {
+  box-shadow: 0 0 0 2px #f5f5f5;
+  transform: scale(1.2);
 }
 
 @media screen and (max-width: 500px) {

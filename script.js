@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   setFunctionOpenPanel();
+  // changeColorTheme();
+  setColorsTheme();
+
   const inputs = [
     ...document.querySelectorAll(
       '.form .input__form > input, .form .input__form > textarea'
@@ -39,4 +42,71 @@ const setHasContentInput = input => {
   } else {
     elemento.classList.remove('has_content');
   }
+};
+
+const changeColorTheme = color => {
+  // const colors = ['0 118 173', '227 124 34', '176 25 171'].reverse();
+
+  // setInterval(() => {
+  //   document.documentElement.style.setProperty(
+  //     '--color',
+  //     colors[Math.floor(Math.random() * colors.length)]
+  //   );
+  // }, 2000);
+
+  document.documentElement.style.setProperty('--color', color);
+};
+
+const setColorsTheme = () => {
+  const container = document.querySelector('.colors__container');
+  const colors = [
+    '0 118 173',
+    '227 124 34',
+    '176 25 171',
+    '252 3 119',
+    '14 204 230',
+    '14 230 144',
+    '240 34 34'
+  ];
+
+  colors.forEach((color, i) => {
+    i += 1;
+
+    const containerColor = document.createElement('div');
+    containerColor.classList.add('color');
+
+    const input = document.createElement('input');
+    input.setAttribute('type', 'radio');
+    input.setAttribute('name', 'color');
+    input.setAttribute('id', `color-${i}`);
+    input.setAttribute('data-color', color);
+
+    if (i === 1) input.setAttribute('checked', true);
+
+    const label = document.createElement('label');
+    label.setAttribute('for', `color-${i}`);
+    label.style.setProperty('--color', color);
+
+    containerColor.appendChild(input);
+    containerColor.appendChild(label);
+    container.appendChild(containerColor);
+
+    // container.innerHTML += `
+    //   <div class="color">
+    //     <input type="radio" name="color" id="color-${i}" data-color="${color}"
+    //     ${i === 1 && 'checked'}>
+    //     <label for="color-${i}"></label>
+    //   </div>
+    // `;
+
+    // container
+    //   .querySelector(`label[for="color-${i}"]`)
+    //   .style.setProperty('--color', color);
+  });
+
+  Array.from(container.querySelectorAll('input[name=color]'), color => {
+    color.addEventListener('change', () => {
+      changeColorTheme(color.dataset.color);
+    });
+  });
 };

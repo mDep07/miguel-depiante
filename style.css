@@ -47,7 +47,7 @@ body {
   width: auto;
   max-width: 80%;
   height: auto;
-  max-height: 85%;
+  max-height: 90%;
   overflow-y: auto;
   font-size: 14px;
 }
@@ -62,12 +62,26 @@ body {
   color: #fff;
   text-shadow: 1px 1px 2px #0c0c0c;
 }
-.box h3 {
-  font-family: 'Darker Grotesque', sans-serif;
+
+.box .description {
+  background-color: rgb(var(--color) / 20%);
   margin: 2rem 0;
-  font-size: 2.5em;
+  padding: 5px 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 0 3px rgb(var(--color));
+}
+
+.description h3 {
+  font-family: 'Darker Grotesque', sans-serif;
+  margin: 0.5rem 0;
+  font-size: 2em;
   color: #fff;
   text-shadow: 1px 1px 2px #0c0c0c;
+  text-align: right;
+}
+
+.description h3:nth-child(odd) {
+  text-align: left;
 }
 
 .box .links__container {

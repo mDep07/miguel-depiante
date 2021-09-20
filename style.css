@@ -213,6 +213,12 @@ body {
 .panel ol li .bx {
   font-size: 2rem;
 }
+.panel ol li .bx.bx-star,
+.panel ol li .bx.bxs-star,
+.panel ol li .bx.bxs-star-half {
+  font-size: 1rem;
+  color: #ffde4d;
+}
 .panel ol li .subtitle {
   display: block;
   width: 100%;

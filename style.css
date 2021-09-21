@@ -59,6 +59,11 @@ body {
   display: none;
 }
 
+.box .img__profile {
+  width: 150px;
+  height: 250px;
+}
+
 .box h1 {
   margin: 0;
   font-size: 6em;
@@ -80,12 +85,12 @@ body {
   font-size: 2em;
   color: #fff;
   text-shadow: 1px 1px 2px #0c0c0c;
-  text-align: right;
-}
-
-.description h3:nth-child(odd) {
   text-align: left;
 }
+
+/* .description h3:nth-child(odd) {
+  text-align: left;
+} */
 
 .box .links__container {
   display: flex;
@@ -378,6 +383,9 @@ form .input__form > textarea::-webkit-scrollbar {
     font-size: 10px;
     padding: 1rem;
   }
+  .links__container {
+    flex-direction: column;
+  }
 
   .links__container a.link {
     font-size: 1.5em;
@@ -387,7 +395,7 @@ form .input__form > textarea::-webkit-scrollbar {
     flex-direction: column;
     justify-content: flex-start;
     min-width: 70px;
-    max-height: 50px;
+    max-height: 70px;
     /* margin-bottom: 0.5rem; */
   }
 

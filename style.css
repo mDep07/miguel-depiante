@@ -166,11 +166,12 @@ body {
   padding: 0.5rem 10rem;
   padding-left: 2.25rem;
   cursor: pointer;
+  transition: all 0.25s ease-in-out;
 }
 
-/* .panel__container .open__panel.active {
-  border-radius: 0.5rem 0.5rem 0 0;
-} */
+.panel__container .open__panel.active {
+  padding-left: .25rem;
+}
 
 .panel__container .open__panel::before {
   content: '';
@@ -189,6 +190,7 @@ body {
   background-color: currentColor;
   transition: transform 0.15s ease-in-out;
 }
+
 .panel__container .open__panel.active::after {
   transform: rotate(90deg);
 }

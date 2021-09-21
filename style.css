@@ -6,8 +6,7 @@
 
 :root {
   --color: 0 118 173;
-  --animation: init 0.7s ease-in-out;
-  --animation-delay: 200;
+  --animation: init 700ms ease-in-out;
 
   /* --color: 227 124 34; */
   /* --color: 176 25 171; */
@@ -74,7 +73,6 @@ body {
   background-size: 200%;
   background-position: center;
   background-blend-mode: screen;
-  animation: var(--animation);
 }
 
 .box h1 {
@@ -83,8 +81,6 @@ body {
   color: #fff;
   text-shadow: 2px 2px 0 rgb(var(--color)), 4px 4px 0 rgb(var(--color) / 50%),
     6px 6px 0 rgb(var(--color) / 25%);
-  animation: var(--animation);
-  animation-delay: 200ms;
 }
 
 .box .description {
@@ -93,8 +89,6 @@ body {
   padding: 5px 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 2px 0 3px rgb(var(--color));
-  animation: var(--animation);
-  animation-delay: 400ms;
 }
 
 .description h3 {
@@ -116,8 +110,6 @@ body {
   justify-content: space-evenly;
   gap: 0.8rem;
   margin-bottom: 0.5rem;
-  animation: var(--animation);
-  animation-delay: 600ms;
 }
 
 .links__container a.link {
@@ -146,8 +138,6 @@ body {
 .box .panel__container {
   font-family: 'Darker Grotesque', sans-serif;
   padding: 0 0.5rem;
-  animation: var(--animation);
-  animation-delay: 800ms;
 }
 
 .box .panel__container::before {
@@ -373,8 +363,6 @@ form .input__form > textarea::-webkit-scrollbar {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: var(--animation);
-  animation-delay: 1000ms;
 }
 
 .colors__container .color {
@@ -431,6 +419,14 @@ form .input__form > textarea::-webkit-scrollbar {
   .links__container a.link:last-child {
     margin-bottom: 0;
   }
+}
+
+.animation {
+  opacity: 0;
+  transform: translateY(100px);
+}
+.animation.start {
+  animation: var(--animation);
 }
 
 @keyframes init {

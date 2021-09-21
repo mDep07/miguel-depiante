@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setFunctionOpenPanel();
   // changeColorTheme();
   setColorsTheme();
+  addAnimation();
 
   const inputs = [
     ...document.querySelectorAll(
@@ -133,3 +134,24 @@ const setColorsTheme = () => {
 
 //   this.oldScroll = this.scrollTop;
 // });
+
+[...document.querySelectorAll('.animation')].forEach((element) => {
+  element.addEventListener('animationend', () => {
+    element.classList.remove('animation');
+  });
+});
+
+function addAnimation(index = 0) {
+  const children = [...document.querySelectorAll('.animation')][index];
+  if (children) {
+    children.classList.add('start');
+    children.addEventListener('animationstart', () => {
+      setTimeout(addAnimation, 200, index + 1);
+    });
+    children.addEventListener('animationend', () => {
+      children.classList.remove('animation', 'start');
+      // addAnimation(index + 1);
+    });
+  }
+  console.log({ children });
+}

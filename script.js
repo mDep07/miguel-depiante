@@ -6,15 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const inputs = [
     ...document.querySelectorAll(
       '.form .input__form > input, .form .input__form > textarea'
-    )
+    ),
   ];
-  inputs.forEach(i => {
+  inputs.forEach((i) => {
     i.addEventListener('change', setHasContentInput);
   });
 });
 
 const setFunctionOpenPanel = () => {
-  Array.from(document.querySelectorAll('.open__panel'), btn => {
+  Array.from(document.querySelectorAll('.open__panel'), (btn) => {
     btn.addEventListener('click', () => {
       const activeBtn = document.querySelector('.open__panel.active');
       if (activeBtn && activeBtn !== btn) {
@@ -33,7 +33,7 @@ const setFunctionOpenPanel = () => {
   });
 };
 
-const setHasContentInput = input => {
+const setHasContentInput = (input) => {
   console.log(input);
   const elemento = input.target;
   const hasContent = elemento.value.length > 0;
@@ -44,7 +44,7 @@ const setHasContentInput = input => {
   }
 };
 
-const changeColorTheme = color => {
+const changeColorTheme = (color) => {
   // const colors = ['0 118 173', '227 124 34', '176 25 171'].reverse();
 
   // setInterval(() => {
@@ -54,6 +54,7 @@ const changeColorTheme = color => {
   //   );
   // }, 2000);
 
+  localStorage.setItem('color-theme', color);
   document.documentElement.style.setProperty('--color', color);
 };
 
@@ -61,12 +62,13 @@ const setColorsTheme = () => {
   const container = document.querySelector('.colors__container');
   const colors = [
     '0 118 173',
+    '235 210 26',
     '227 124 34',
     '176 25 171',
     '252 3 119',
     '14 204 230',
     '14 230 144',
-    '240 34 34'
+    '240 34 34',
   ];
 
   colors.forEach((color, i) => {
@@ -104,9 +106,30 @@ const setColorsTheme = () => {
     //   .style.setProperty('--color', color);
   });
 
-  Array.from(container.querySelectorAll('input[name=color]'), color => {
+  Array.from(container.querySelectorAll('input[name=color]'), (color) => {
     color.addEventListener('change', () => {
       changeColorTheme(color.dataset.color);
     });
   });
+
+  const colorTheme = localStorage.getItem('color-theme');
+  if (colorTheme)
+    document.documentElement.style.setProperty('--color', colorTheme);
 };
+
+// document.querySelector('.box').addEventListener('scroll', function (e) {
+//   const img = document.querySelector('.img__profile');
+//   const imgHeight = img.getBoundingClientRect().height;
+//   const down = this.scrollTop > this.oldScroll;
+//   const up = this.scrollTop < this.oldScroll;
+
+//   if(down) {
+//     if(img.getBoundingClientRect().height > (imgHeight / 2)) {
+//       img.style = `height: 0; width: 0`;
+//     } else {
+
+//     }
+//   }
+
+//   this.oldScroll = this.scrollTop;
+// });

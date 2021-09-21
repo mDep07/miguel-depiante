@@ -6,6 +6,9 @@
 
 :root {
   --color: 0 118 173;
+  --animation: init 0.7s ease-in-out;
+  --animation-delay: 200;
+
   /* --color: 227 124 34; */
   /* --color: 176 25 171; */
 }
@@ -60,15 +63,28 @@ body {
 }
 
 .box .img__profile {
-  width: 150px;
+  width: 250px;
   height: 250px;
+  margin: 0 auto;
+  border-radius: 1000px;
+  border: 5px solid #fff;
+  box-shadow: 0 1px 4px rgb(var(--color)), 0 1px 6px rgb(var(--color) / 80%),
+    0 2px 12px rgb(var(--color) / 45%);
+  background-image: url('https://cdn.jsdelivr.net/gh/mDep07/miguel-depiante@master/img/_miguel.jpg');
+  background-size: 200%;
+  background-position: center;
+  background-blend-mode: screen;
+  animation: var(--animation);
 }
 
 .box h1 {
   margin: 0;
   font-size: 6em;
   color: #fff;
-  text-shadow: 1px 1px 2px #0c0c0c;
+  text-shadow: 2px 2px 0 rgb(var(--color)), 4px 4px 0 rgb(var(--color) / 50%),
+    6px 6px 0 rgb(var(--color) / 25%);
+  animation: var(--animation);
+  animation-delay: 200ms;
 }
 
 .box .description {
@@ -77,6 +93,8 @@ body {
   padding: 5px 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 2px 0 3px rgb(var(--color));
+  animation: var(--animation);
+  animation-delay: 400ms;
 }
 
 .description h3 {
@@ -98,6 +116,8 @@ body {
   justify-content: space-evenly;
   gap: 0.8rem;
   margin-bottom: 0.5rem;
+  animation: var(--animation);
+  animation-delay: 600ms;
 }
 
 .links__container a.link {
@@ -123,12 +143,14 @@ body {
   text-shadow: 0 1px 2px #0c0c0c;
 }
 
-.box .technologies__container {
+.box .panel__container {
   font-family: 'Darker Grotesque', sans-serif;
   padding: 0 0.5rem;
+  animation: var(--animation);
+  animation-delay: 800ms;
 }
 
-.box .technologies__container::before {
+.box .panel__container::before {
   content: '';
   display: block;
   width: 100%;
@@ -138,7 +160,7 @@ body {
   margin-bottom: 1rem;
 }
 
-.technologies__container .open__panel {
+.panel__container .open__panel {
   position: relative;
   display: flex;
   justify-content: start;
@@ -156,11 +178,11 @@ body {
   cursor: pointer;
 }
 
-/* .technologies__container .open__panel.active {
+/* .panel__container .open__panel.active {
   border-radius: 0.5rem 0.5rem 0 0;
 } */
 
-.technologies__container .open__panel::before {
+.panel__container .open__panel::before {
   content: '';
   position: absolute;
   width: 16px;
@@ -168,7 +190,7 @@ body {
   left: 10px;
   background-color: currentColor;
 }
-.technologies__container .open__panel::after {
+.panel__container .open__panel::after {
   content: '';
   position: absolute;
   width: 2px;
@@ -177,11 +199,11 @@ body {
   background-color: currentColor;
   transition: transform 0.15s ease-in-out;
 }
-.technologies__container .open__panel.active::after {
+.panel__container .open__panel.active::after {
   transform: rotate(90deg);
 }
 
-.technologies__container .panel {
+.panel__container .panel {
   font-family: 'Darker Grotesque', sans-serif;
   background-color: rgb(var(--color) / 20%);
   font-weight: 500;
@@ -191,11 +213,11 @@ body {
   transition: max-height 0.25s ease-in-out;
 }
 
-.technologies__container .open__panel.active ~ .panel {
+.panel__container .open__panel.active ~ .panel {
   border-radius: 0 0 0.5rem 0.5rem;
 }
 
-.technologies__container .panel ol {
+.panel__container .panel ol {
   list-style-type: none;
   padding: 0 1rem;
   margin: 0;
@@ -351,6 +373,8 @@ form .input__form > textarea::-webkit-scrollbar {
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: var(--animation);
+  animation-delay: 1000ms;
 }
 
 .colors__container .color {
@@ -406,5 +430,16 @@ form .input__form > textarea::-webkit-scrollbar {
 
   .links__container a.link:last-child {
     margin-bottom: 0;
+  }
+}
+
+@keyframes init {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

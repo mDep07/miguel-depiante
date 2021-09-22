@@ -158,19 +158,20 @@ body {
   margin-top: 0.5rem;
   width: 100%;
   border: none;
-  border-radius: 0.5rem 0.5rem 0 0;
+  border-radius: 0.5rem;
   background-color: rgb(var(--color) / 20%);
   color: #fff;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 400;
-  padding: 0.5rem 10rem;
+  padding: 1rem 0;
   padding-left: 2.25rem;
   cursor: pointer;
   transition: all 0.25s ease-in-out;
 }
 
 .panel__container .open__panel.active {
-  padding-left: .25rem;
+  padding-left: 3.25rem;
+  border-radius: 0.5rem 0.5rem 0 0;
 }
 
 .panel__container .open__panel::before {

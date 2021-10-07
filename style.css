@@ -397,6 +397,8 @@ form .input__form > textarea::-webkit-scrollbar {
   .box {
     font-size: 10px;
     padding: 1rem;
+    max-width: 95%;
+    max-height: 95%;
   }
   .links__container {
     flex-direction: column;

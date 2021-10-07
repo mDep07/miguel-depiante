@@ -61,6 +61,8 @@ const changeColorTheme = (color) => {
 
 const setColorsTheme = () => {
   const container = document.querySelector('.colors__container');
+  const colorTheme = localStorage.getItem('color-theme');
+
   const colors = [
     '0 118 173',
     '235 210 26',
@@ -84,7 +86,7 @@ const setColorsTheme = () => {
     input.setAttribute('id', `color-${i}`);
     input.setAttribute('data-color', color);
 
-    if (i === 1) input.setAttribute('checked', true);
+    if (colorTheme === color) input.setAttribute('checked', true);
 
     const label = document.createElement('label');
     label.setAttribute('for', `color-${i}`);
@@ -113,7 +115,6 @@ const setColorsTheme = () => {
     });
   });
 
-  const colorTheme = localStorage.getItem('color-theme');
   if (colorTheme)
     document.documentElement.style.setProperty('--color', colorTheme);
 };
